@@ -15,6 +15,8 @@ afriques=[67,79,87,427,428,448,449,483];
 uks=[202 210 405 451 461 465 477 ];
 maghrebs=[15,209];
 russia=[194];
+
+india=[17];
 //regression shape 1,9 vers 3*3 :  INC3=matrix(INC,3,3) ; INC4=INC3.' trans.'
 
 //POUB=1:9
@@ -45,6 +47,7 @@ Ymaghrebs=sum(MATRIXX(maghrebs,:),1);
 Yrussia=sum(MATRIXX(russia,:),1);
 YTrussia=Yrussia';
 
+YTindia=MATRIXX(italy,:)';
 //espagne20   pays-bas   442
 spain=[20];
 netherlands=[442];
@@ -58,5 +61,5 @@ Noir=33;
 //xset("background",Noir);
 //plot( [X,X,X,X,X],[Ychines,Yfrances, Yitaly,Yus, Ygerm])
 //big green p69
-plot2d('onn', XT,[YTchines YTfrances YTitaly YTus YTgerm,YTspain,YTnetherl,YTafriques,YTrussia],[1 -2 -3 4 5 6 -7 2 3],"121","chines@frances@italy@us@germ@Spain@Netherlands@Afrique@Russia")
+plot2d('onn', XT,[YTchines YTfrances YTitaly YTus YTgerm,YTspain,YTnetherl,YTafriques,YTrussia,YTindia],[1 -2 -3 -4 5 6 -7 2 3 4],"121","chines@frances@italy@us@germ@Spain@Netherlands@Afrique@Russia@India")
 xtitle('Covid19 Le20200324')

@@ -65,4 +65,4 @@ Noir=33;
 //plot( [X,X,X,X,X],[Ychines,Yfrances, Yitaly,Yus, Ygerm])
 //big green p69
 plot2d('onn', XT,[YTchines YTfrances YTitaly YTus YTgerm,YTspain,YTnetherl,YTafriques,YTrussia,YTindia,YTsouthKorea],[1 -2 -3 -4 -5 6 -7 2 3 4 5],"121","chines@frances@italy@us@germ@Spain@Netherlands@Afrique@Russia@India@south Korea")
-xtitle('Covid19 Le20200324')
+xtitle('Covid19 Le20200325')

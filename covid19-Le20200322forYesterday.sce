@@ -1,5 +1,6 @@
 //from https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases
-filename = fullfile( 'D:\Telecharg\time_series_2019-ncov-Confirmed.csv');
+//filename = fullfile( 'D:\Telecharg\time_series_2019-ncov-Confirmed.csv');
+filename = fullfile( 'time_series_2019-ncov-Confirmed.csv');
 MATRIXX = csvRead ( filename,",","double" );
 //X=MATRIXX(1:1,:)
 X=1:size(MATRIXX)(1,2);

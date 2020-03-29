@@ -1,7 +1,7 @@
 //from https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases
 //filename = fullfile( 'D:\Telecharg\time_series_2019-ncov-Confirmed.csv');
 //filename = fullfile( 'time_series_2019-ncov-Confirmed.csv');
-filename = fullfile( 'time_series_covid19_confirmed_global.csv');
+filename = fullfile( '../time_series_covid19_confirmed_global.csv');
 
 MATRIXX = csvRead ( filename,",","double" );
 //X=MATRIXX(1:1,:)
@@ -14,6 +14,7 @@ frances=[109 110 111 112 113 114 115 116 117 118 ];
 germany=[122];
 italy=[139];
 us=[227];
+//TODO put into set unary values because Africa is iterative subjective own process
 //afriques=[67,79  ,87,  414,427,428,448,449,483];
 afriques=[195,202,212, 144,158,190,201,210,216,                       202,   106];
 
@@ -72,4 +73,4 @@ Noir=33;
 //plot( [X,X,X,X,X],[Ychines,Yfrances, Yitaly,Yus, Ygerm])
 //big green p69
 plot2d('onn', XT,[YTchines YTfrances YTitaly YTus YTgerm,YTspain,YTnetherl,YTafriques,YTrussia,YTindia,YTsouthKorea],[1 -2 -3 -4 -5 6 -7 2 3 4 5],"121","chines@frances@italy@us@germ@Spain@Netherlands@Afrique@Russia@India@south Korea")
-xtitle('Covid19 Le20200327')
+xtitle('Covid19 evolution from 2020/1/22')

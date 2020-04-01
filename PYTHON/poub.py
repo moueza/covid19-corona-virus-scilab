@@ -1,5 +1,5 @@
 import csv
-
+#https://realpython.com/python-csv/#reading-csv-files-with-csv
 with open('../time_series_covid19_deaths_global.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0

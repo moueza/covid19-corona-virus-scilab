@@ -4,6 +4,9 @@
 filename = fullfile( '../time_series_covid19_confirmed_global.csv');
 
 MATRIXX = csvRead ( filename,",","double" );
+MATRIXXstring = csvRead ( filename,",","string" );
+
+
 MATRIXXtrunc=MATRIXX(:,5:$);
 //X=MATRIXX(1:1,:)
 X=1:size(MATRIXXtrunc)(1,2);

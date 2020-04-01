@@ -4,7 +4,7 @@
 filename = fullfile( '../time_series_covid19_confirmed_global.csv');
 
 MATRIXX = csvRead ( filename,",","double" );
-MATRIXXstring = csvRead ( filename,",","string" );
+MATRIXXstring = csvRead ( filename,",",".","string" );
 
 
 MATRIXXtrunc=MATRIXX(:,5:$);
@@ -22,8 +22,10 @@ us=[227];
 //afriques=[67,79  ,87,  414,427,428,448,449,483];
 afriques=[195,202,212, 144,158,190,201,210,216,                       202,   106];
 //print names....list
+MATRIXXstring(afriques,1:2)
+
 //MATRIXX(afriques,2:$) why not printed
-MATRIXX(afriques,3:$)
+//MATRIXX(afriques,3:$)
 
 
 uks=[219 220 221 222 223 224 225  ];

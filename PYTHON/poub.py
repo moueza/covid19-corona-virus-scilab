@@ -11,6 +11,7 @@
 #
 ####
 ##mag Linux France bleu no 40H :
+#                                p16 fortran g95 heritage de classe
 
 import csv
 #set no index

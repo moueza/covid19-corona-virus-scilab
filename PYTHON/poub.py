@@ -13,19 +13,31 @@
 ##mag Linux France bleu no 40H :
 
 import csv
+#set no index
+ages = { 2 , 5 }
+listIndex =[ 2 , 5 ]
+print(listIndex[1])
 #https://realpython.com/python-csv/#reading-csv-files-with-csv
+
 with open('../time_series_covid19_deaths_global.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
-    for row in csv_reader:
-        row
-        #if line_count == 0:
-        #    print(f'Column names are {", ".join(row)}')
-        #    line_count += 1
-        #else:
-        #    print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
-        #    line_count += 1
+    #print(f'longh = {line_count.length}')
+    #print(f'longh = {len(line_count)}') KO
+    #print(len(csv_reader)) KO
+    for roww in csv_reader:
+         #if line_count == 0:
+         #print(f'\t{roww[1]}')
+         #if line_count == 0:
+         #    print(f'Column names are {", ".join(row)}')
+         #    line_count += 1
+         #else:
+         #    print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
+         #    line_count += 1
 		#line[1]=row
-		
+         #print(f'\t {ages[1]}') TypeError: 'set' object does not support indexing
+        print(ages)
+         
+        print(f'\t {roww[1]}')	
     #print(f'Processed {line_count} lines.')
     

@@ -38,7 +38,7 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
          #print(f'\t {ages[1]}') TypeError: 'set' object does not support indexing
         #print(ages) OK
          
-        print(f'\t {line_count} {roww[1]} {roww[4] + 1000}')
+        print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
         line_count += 1
     #print(f'Processed {line_count} lines.')
     

@@ -70,5 +70,5 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
       
     #print(f'Processed {line_count} lines.')
     print(arrayMoi[0])
-    #TODO convert to np.array
+    #TODO convert to np.array https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array
     

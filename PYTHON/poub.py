@@ -13,6 +13,8 @@
 #                                Zope ( Plone ) server p64
 #                                modeles p76 bookmarks p78
 #mag Linux magazine no 49H jaune :
+#                                slots p18
+#decorateurs p20 memoized cache
 #                                pip + virtual env +h versions p26 (cf repo Kubernetes Python)
 #                                Redis p32
 #                                chaines listes 34 sort lrange
@@ -21,6 +23,7 @@
 #                                Nginx p43
 ####                             schedulers 48 brokers 49 git 59
 ##mag Linux France bleu no 40H :
+#                                p13 append [112]
 #                                p16 fortran g95 heritage de classe
 #                                p19 // parallelisme
 import numpy as np
@@ -38,12 +41,19 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
     #print(f'longh = {line_count.length}')
     #print(f'longh = {len(line_count)}') KO
     #print(len(csv_reader)) KO
-    mat
+    #https://docs.scipy.org/doc/numpy/reference/generated/numpy.matrix.html
+    #matt = np.matrix('1 2; 3 4')
+    matt = np.matrix('')
+    arrayMoi = []
     for roww in csv_reader:
       if line_count != 0:
           print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
           #https://docs.scipy.org/doc/numpy/reference/generated/numpy.column_stack.html
-          mat=np.column_stack((mat,b))
+          #matt=np.column_stack((matt,roww))
+          #https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array
+          #arrayMoi[0]=roww
+          #[112]
+          arrayMoi.append( roww)
       line_count += 1
          #print(f'\t{roww[1]}')
          #if line_count == 0:
@@ -59,4 +69,6 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
         #print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
       
     #print(f'Processed {line_count} lines.')
+    print(arrayMoi[0])
+    #TODO convert to np.array
     

@@ -13,7 +13,7 @@
 ##mag Linux France bleu no 40H :
 #                                p16 fortran g95 heritage de classe
 #                                p19 // parallelisme
-
+import numpy
 import csv
 #set no index
 ages = { 2 , 5 }

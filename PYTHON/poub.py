@@ -15,6 +15,7 @@
 #                                p19 // parallelisme
 import numpy
 import csv
+
 #set no index
 ages = { 2 , 5 }
 listIndex =[ 2 , 5 ]

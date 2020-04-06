@@ -16,7 +16,7 @@ import csv
 #set no index
 ages = { 2 , 5 }
 listIndex =[ 2 , 5 ]
-print(listIndex[1])
+#print(listIndex[1]) OK
 #https://realpython.com/python-csv/#reading-csv-files-with-csv
 
 with open('../time_series_covid19_deaths_global.csv') as csv_file:
@@ -36,8 +36,9 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
          #    line_count += 1
 		#line[1]=row
          #print(f'\t {ages[1]}') TypeError: 'set' object does not support indexing
-        print(ages)
+        #print(ages) OK
          
-        print(f'\t {roww[1]}')	
+        print(f'\t {line_count} {roww[1]} {roww[4] + 1000}')
+        line_count += 1
     #print(f'Processed {line_count} lines.')
     

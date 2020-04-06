@@ -26,19 +26,21 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
     #print(f'longh = {len(line_count)}') KO
     #print(len(csv_reader)) KO
     for roww in csv_reader:
-         #if line_count == 0:
+      if line_count != 0:
+          print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
+      line_count += 1
          #print(f'\t{roww[1]}')
          #if line_count == 0:
          #    print(f'Column names are {", ".join(row)}')
          #    line_count += 1
          #else:
          #    print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
-         #    line_count += 1
-		#line[1]=row
-         #print(f'\t {ages[1]}') TypeError: 'set' object does not support indexing
+        #    line_count += 1
+	#line[1]=row
+        #print(f'\t {ages[1]}') TypeError: 'set' object does not support indexing
         #print(ages) OK
          
-        print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
-        line_count += 1
+        #print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
+      
     #print(f'Processed {line_count} lines.')
     

@@ -4,6 +4,6 @@
  
 !!!!python3!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-python3 pob.py
+python3 poub.py
 
 >>>> exec(open('poub.py').read())

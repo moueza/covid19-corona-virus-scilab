@@ -1,3 +1,5 @@
+#exec(open('poub.py').read())
+
 
 #file mag Login pratique blanc no 10 p23 :
 #                                 classes p14
@@ -54,7 +56,7 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
           #https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array
           #arrayMoi[0]=roww
           #[112]
-          arrayMoi.append( roww)
+      arrayMoi.append( roww)
       line_count += 1
          #print(f'\t{roww[1]}')
          #if line_count == 0:
@@ -70,9 +72,9 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
         #print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
       
     #print(f'Processed {line_count} lines.')
-    print(arrayMoi[0])
+    #print(arrayMoi[0])
     print('\nlbl45')
-    print(arrayMoi)
+    #print(arrayMoi)
     print('\nlbl50')
     #print(arrayMoi[:][4:]
     arrayMoiArray=np.asarray(arrayMoi)
@@ -82,10 +84,10 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
     subMatrix=arrayMoiMatrix[0:1000][4:1000]# KO rien
 
     #subArray2
-    subMatrix2=arrayMoiMatrix[:,4:]
+    subMatrix2=arrayMoiMatrix[1:,4:]
     
-    subArray.flatten()
-    subMatrix.flatten()
+    #subArray.flatten()
+    #subMatrix.flatten()
 
     #https://docs.scipy.org/doc/numpy/reference/generated/numpy.vectorize.html
     def myfunc(x):
@@ -104,3 +106,44 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
     # a[:][1]KO
     m=np.matrix(a)
     #TODO col des 4 par append
+
+    
+    ####GRAPHS##############
+    import matplotlib.pyplot as plt
+    print('\nlbl60')
+
+    plt.xlabel('x label')
+    indexFranceOri=118#ori = from ancient from Scilab file
+    YfranceMat=subMatInt2[indexFranceOri-2,:]#118 -2 car -1 index 0 , et -1 car sub = trunc lignes et col
+    YfranceLabel=arrayMoiMatrix[indexFranceOri-2+1]#ci-dessus+1 car ce n est pas une sub dc pas de trunc title
+    plt.plot(YfranceMat.T, label='linear')#draw .T car que mat col
+    plt.show()
+    
+    #fig = plt.figure()  # an empty figure with no axes
+    #fig.suptitle('No axes on this figure')  # Add a title so we know which it is
+
+    #fig, ax_lst = plt.subplots(1, 1)  # a figure with a 2x2 grid of Axes
+    
+    print('\nlbl70')
+    #plt.xlabel('x label')
+    #plt.ylabel('y label')
+    print('\nlbl80')
+    plt.title("Simple Plot")
+    print('\nlbl85')
+    #https://matplotlib.org/3.1.0/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py
+    #https://stackoverflow.com/questions/59346731/no-handles-with-labels-found-to-put-in-legend
+    plt.xlim(0,73)
+    plt.ylim(0,100000)
+   
+    print('\nlbl90')
+
+    
+    print('\nlbl100')
+
+    #YfranceLabel
+    print(YfranceLabel)
+    
+    #plt.legend(YfranceMat,['fr'])#draw
+    #plt.plot(x, x, label='linear')
+    
+

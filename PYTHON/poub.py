@@ -1,7 +1,8 @@
+#python3
 #exec(open('poub.py').read())
 
 
-#file mag Login pratique blanc no 10 p23 :
+#*file mag Login pratique blanc no 10 p23 :
 #                                 classes p14
 #         filtres listes p18
 #         slice p19
@@ -15,7 +16,7 @@
 #                                Gmail p56
 #                                Zope ( Plone ) server p64
 #                                modeles p76 bookmarks p78
-#mag Linux magazine no 49H jaune :
+#*mag Linux magazine no 49H jaune :
 #                                slots p18
 #decorateurs p20 memoized cache
 #                                pip + virtual env +h versions p26 (cf repo Kubernetes Python)
@@ -24,22 +25,26 @@
 #                                ens p37
 #                                cookies p42
 #                                Nginx p43
-####                             schedulers 48 brokers 49 git 59
-##mag Linux France bleu no 40H :
+#                                schedulers 48 brokers 49 git 59
+#*mag Linux France bleu no 40H :
 #                                p13 append [112]
 #                                p16 fortran g95 heritage de classe
+#                                p17 map
 #                                p19 // parallelisme
+#                                p22 map
+
 import numpy as np
 import csv
-
+import matplotlib.pyplot as plt
 #set no index
 ages = { 2 , 5 }
 listIndex =[ 2 , 5 ]
 #print(listIndex[1]) OK
 #https://realpython.com/python-csv/#reading-csv-files-with-csv
 
-with open('../time_series_covid19_deaths_global.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
+#with open('../time_series_covid19_deaths_global.csv') as csv_fileDeath:
+with open('../time_series_covid19_confirmed_global.csv') as csv_fileConfirmed:
+    csv_reader = csv.reader( csv_fileConfirmed, delimiter=',')
     line_count = 0
     #print(f'longh = {line_count.length}')
     #print(f'longh = {len(line_count)}') KO
@@ -109,16 +114,58 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
 
     
     ####GRAPHS##############
-    import matplotlib.pyplot as plt
+    
     print('\nlbl60')
 
-    plt.xlabel('x label')
+    
+    ###
     indexFranceOri=118#ori = from ancient from Scilab file
     YfranceMat=subMatInt2[indexFranceOri-2,:]#118 -2 car -1 index 0 , et -1 car sub = trunc lignes et col
     YfranceLabel=arrayMoiMatrix[indexFranceOri-2+1]#ci-dessus+1 car ce n est pas une sub dc pas de trunc title
-    plt.plot(YfranceMat.T, label='linear')#draw .T car que mat col
-    plt.show()
+    ###
+    indexGermanyOri=122
+    YgermanyMat=subMatInt2[indexGermanyOri-2,:]
+    YgermanyLabel=arrayMoiMatrix[indexGermanyOri-2+1]
+    ###
+    ###
+    indexItalyOri=139
+    YitalyMat=subMatInt2[indexItalyOri-2,:]
+    YitalyLabel=arrayMoiMatrix[indexItalyOri-2+1]
+    ###
+    ###
+    indexUsOri=227
+    YusMat=subMatInt2[indexUsOri-2,:]
+    YusLabel=arrayMoiMatrix[indexUsOri-2+1]
+    ###
+    #plt.plot(YfranceMat.T,YgermanyMat.T, label='linear')KO
+    #plt.plot(YfranceMat.T,YgermanyMat.T)KO
+    #https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot
+    #plt.plot(YfranceMat.T,label='linear',YgermanyMat.T,label='linear')#draw .T +++++++++ car que mat colKO
+    ###
+    print(YfranceLabel)
     
+    print(YitalyLabel)
+    print(YusLabel)
+    print(YgermanyLabel)
+
+
+    ###
+    plt.xlabel('days from 2020/1/22')
+    plt.ylabel('items')
+    plt.title("Covid19 evolution of confirmed cases from 2020/1/22")
+
+    colonnIndxMax=YusMat.shape[1]-1
+    plt.xlim(0,colonnIndxMax)
+    plt.ylim(0,YusMat[0,colonnIndxMax])
+    
+    #plt.plot(YfranceMat.T,'b.',label='linear',YitalyMat.T,'ro',label='linear',YusMat.T,'b.',label='linear',YgermanyMat.T,'b.',label='linear')
+    plt.plot(YfranceMat.T,'b-',label='France',linewidth=2, markersize=12, ) #linestyle='-' options https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot
+    plt.plot(YitalyMat.T,'r-',label='Italy')
+    plt.plot(YusMat.T,'k-',label='USA')
+    plt.plot(YgermanyMat.T,'c-',label='German')
+    plt.legend()#AP plot++++++OK ssi chn color etc st !=
+    plt.show()
+    ###
     #fig = plt.figure()  # an empty figure with no axes
     #fig.suptitle('No axes on this figure')  # Add a title so we know which it is
 
@@ -128,12 +175,11 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
     #plt.xlabel('x label')
     #plt.ylabel('y label')
     print('\nlbl80')
-    plt.title("Simple Plot")
+
     print('\nlbl85')
     #https://matplotlib.org/3.1.0/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py
     #https://stackoverflow.com/questions/59346731/no-handles-with-labels-found-to-put-in-legend
-    plt.xlim(0,73)
-    plt.ylim(0,100000)
+
    
     print('\nlbl90')
 
@@ -141,9 +187,13 @@ with open('../time_series_covid19_deaths_global.csv') as csv_file:
     print('\nlbl100')
 
     #YfranceLabel
-    print(YfranceLabel)
+
+
+
+
     
     #plt.legend(YfranceMat,['fr'])#draw
     #plt.plot(x, x, label='linear')
+    #TODO a;b;c;d;e; = print(a);print(2)
     
 

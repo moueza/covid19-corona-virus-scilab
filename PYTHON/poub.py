@@ -4,16 +4,25 @@
 
 #*file mag Login pratique blanc no 10 p23 :
 #                                 classes p14
-#         filtres listes p18
-#         slice p19
-#         operateurs
-#         p20 wxpython p24
+#                                 p08 IDLE IDE
+#                                 p12 listes piles
+#                                 p13 tokens
+#                                 p15  PlusOperator
+
+#                                 p17 strip split lambda
+#         p18 filtres listes map regexp (ie strings)
+#         p19 slice
+#         p20 operateurs
+#         p24 wxpython
 #         editeur p30 nav p32 reseau p36 threads p38
 #                                sexe boobs tits p24, p26, p31
 #                                svg graph XML p40
+#                                p43 svg
 #                                recherches Google p52
 #                                SOAP LDAP p54
 #                                Gmail p56
+#                                p58 MySQL database
+
 #                                Zope ( Plone ) server p64
 #                                modeles p76 bookmarks p78
 #*mag Linux magazine no 49H jaune :

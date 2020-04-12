@@ -4,7 +4,7 @@
 
 #*file mag Login pratique blanc no 10 p23 :
 #                                 classes p14
-#                                 p08 IDLE IDE
+#                                 p08 IDLE IDE!
 #                                 p12 listes piles
 #                                 p13 tokens
 #                                 p15  PlusOperator

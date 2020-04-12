@@ -17,7 +17,14 @@
 #                                Zope ( Plone ) server p64
 #                                modeles p76 bookmarks p78
 #*mag Linux magazine no 49H jaune :
-#                                slots p18
+#                                p05 unit tests
+#                                p12 objets dyn
+#                                p18 slots metaclass
+#                                p20 decorators annotations  functions
+#                                p23 virtualenv
+#                                p70 tracked
+
+#                                p74 planets  collision
 #decorateurs p20 memoized cache
 #                                pip + virtual env +h versions p26 (cf repo Kubernetes Python)
 #                                Redis p32
@@ -32,6 +39,13 @@
 #                                p17 map
 #                                p19 // parallelisme
 #                                p22 map
+#                                p31 p32 ITK VTK                                   
+#                                p54 packager et diffuser son application
+#                                p62 Decorateurs annotations
+#                                p65 3D imaging (jpg,) DOM XML
+#                                p69 Zope adaptateurs
+#                                p70 interfaces
+
 
 import numpy as np
 import csv
@@ -136,6 +150,19 @@ with open('../time_series_covid19_confirmed_global.csv') as csv_fileConfirmed:
     indexUsOri=227
     YusMat=subMatInt2[indexUsOri-2,:]
     YusLabel=arrayMoiMatrix[indexUsOri-2+1]
+    ###
+    #    chines  = np.array(coming("51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 "))
+
+    #coming : to commas np.array or matrix by regex floats recursive
+    chines  = coming("51    52 53 
+54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 ")
+    frances=[109 110 111 112 113 114 115 116 117 118 ];
+    afriques=[195,202,212, 144,158,190,201,210,216,                       202,   106]
+    uks=[219 220 221 222 223 224 225  ];
+    maghrebs=[218,215];
+    russia=[189];
+    india=[133];
+    southKorea=[145];
     ###
     #plt.plot(YfranceMat.T,YgermanyMat.T, label='linear')KO
     #plt.plot(YfranceMat.T,YgermanyMat.T)KO

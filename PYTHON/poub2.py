@@ -11,37 +11,37 @@ listIndex = [2, 5]
 
 # with open('../time_series_covid19_deaths_global.csv') as csv_fileDeath:
 with open('../time_series_covid19_confirmed_global.csv') as csv_fileConfirmed:
-     csv_reader = csv.reader(csv_fileConfirmed, delimiter=',')
-     line_count = 0
-     # print(f'longh = {line_count.length}')
-     # print(f'longh = {len(line_count)}') KO
-     # print(len(csv_reader)) KO
-     # https://docs.scipy.org/doc/numpy/reference/generated/numpy.matrix.html
-     # matt = np.matrix('1 2; 3 4')
-     matt = np.matrix('')
-     arrayMoi = []
-     for roww in csv_reader:
-         if line_count != 0:
-             print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
-             # https://docs.scipy.org/doc/numpy/reference/generated/numpy.column_stack.html
-             # matt=np.column_stack((matt,roww))
-             # https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array
-             # arrayMoi[0]=roww
-             # [112]
-             arrayMoi.append(roww)
-         line_count += 1
-         # print(f'\t{roww[1]}')
-         # if line_count == 0:
-         #    print(f'Column names are {", ".join(row)}')
-         #    line_count += 1
-         # else:
-         #    print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
-         #    line_count += 1
-         # line[1]=row
-         # print(f'\t {ages[1]}') TypeError: 'set' object does not support indexing
-         # print(ages) OK
+    csv_reader = csv.reader(csv_fileConfirmed, delimiter=',')
+    line_count = 0
+    # print(f'longh = {line_count.length}')
+    # print(f'longh = {len(line_count)}') KO
+    # print(len(csv_reader)) KO
+    # https://docs.scipy.org/doc/numpy/reference/generated/numpy.matrix.html
+    # matt = np.matrix('1 2; 3 4')
+    matt = np.matrix('')
+    arrayMoi = []
+    for roww in csv_reader:
+        if line_count != 0:
+            print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
+            # https://docs.scipy.org/doc/numpy/reference/generated/numpy.column_stack.html
+            # matt=np.column_stack((matt,roww))
+            # https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array
+            # arrayMoi[0]=roww
+            # [112]
+            arrayMoi.append(roww)
+        line_count += 1
+        # print(f'\t{roww[1]}')
+        # if line_count == 0:
+        #    print(f'Column names are {", ".join(row)}')
+        #    line_count += 1
+        # else:
+        #    print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
+        #    line_count += 1
+        # line[1]=row
+        # print(f'\t {ages[1]}') TypeError: 'set' object does not support indexing
+        # print(ages) OK
 
-         # print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
+        # print(f'\t {line_count} {roww[1]} {int(roww[4]) + 1000}')
 
 # print(f'Processed {line_count} lines.')
 # print(arrayMoi[0])
@@ -61,9 +61,13 @@ subMatrix2 = arrayMoiMatrix[1:, 4:]
 # subMatrix.flatten()
 
 # https://docs.scipy.org/doc/numpy/reference/generated/numpy.vectorize.html
+
+
 def myfunc(x):
     "Return a-b if a>b, otherwise return a+b"
     return int(x)
+
+
 vfunc = np.vectorize(myfunc)
 
 # vfunc(subArray, 2)
@@ -115,16 +119,6 @@ YusLabel = arrayMoiMatrix[indexUsOri-2+1]
 lm = ListeMoi()
 l2 = lm.coming(str)
 ###
-india = [133]
-indexxMat = np.matrix(india)  # to enable -2 with matrix below
-YindiaMatsTripl = subMatInt2[indexxMat-2, :]  # !!!!!!!!vector triple
-YindiaMatsDouble = YindiaMatsTripl[0]
-# np.append(q.tolist(),x.tolist(),axis=0)
-# YindiaMat=subMatInt2[indexFranceOri-2,:]
-YindiaMat = YindiaMatsDouble.sum(axis=0)
-
-
-###
 chines = lm.coming("""51    52 53
         5 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 """)  # triples guillemets
 indexxMatChines = np.matrix(chines)  # to enable -2 with matrix below
@@ -135,9 +129,6 @@ YchinesMatsDouble = YchinesMatsTripl[0]
 # YindiaMat=subMatInt2[indexFranceOri-2,:]
 YchinesMat = YchinesMatsDouble.sum(axis=0)
 ###
-
-
-
 frances = lm.coming("""109 110 111 112 113 114 115 116 117 118 """)
 afriques = [195, 202, 212, 144, 158, 190, 201,
             210, 216,                       202,   106]
@@ -159,7 +150,15 @@ oL = (o[0]).tolist()
 val = [100, 101, 102, 103]
 qARR = np.append(oL, (np.matrix(val)).tolist(), axis=0)  # add a row
 qARR.sum(axis=0)
-
+###
+india = [133]
+indexxMat = np.matrix(india)  # to enable -2 with matrix below
+YindiaMatsTripl = subMatInt2[indexxMat-2, :]  # !!!!!!!!vector triple
+YindiaMatsDouble = YindiaMatsTripl[0]
+# np.append(q.tolist(),x.tolist(),axis=0)
+# YindiaMat=subMatInt2[indexFranceOri-2,:]
+YindiaMat = YindiaMatsDouble.sum(axis=0)
+###
 southKorea = [145]
 ###
 # plt.plot(YfranceMat.T,YgermanyMat.T, label='linear')KO

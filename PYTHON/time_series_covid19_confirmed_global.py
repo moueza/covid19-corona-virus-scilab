@@ -1,5 +1,5 @@
 # python3
-# exec(open('time_series_covid19_confirmed_global.py').read())
+#exec(open('time_series_covid19_confirmed_global.py').read())
 
 
 # *file mag Login pratique blanc no 10 [1] p23 :
@@ -185,9 +185,16 @@ class MaladType:
 
         lm = ListeMoi()
         l2 = lm.coming(str)
-
+        ###
         chines = lm.coming("""51    52 53
             5 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 """)  # triples guillemets
+        indexxMatChines = np.matrix(chines)  # to enable -2 with matrix below
+        YchinesMatsTripl = subMatInt2[indexxMatChines-2, :]  # !!!!!!!!vector triple
+        YchinesMatsDouble = YchinesMatsTripl[0]
+        # np.append(q.tolist(),x.tolist(),axis=0)
+        # YindiaMat=subMatInt2[indexFranceOri-2,:]
+        YchinesMat = YchinesMatsDouble.sum(axis=0)
+        ###
         frances = lm.coming("""109 110 111 112 113 114 115 116 117 118 """)
         afriques = [195, 202, 212, 144, 158, 190, 201,
                     210, 216,                       202,   106]
@@ -247,6 +254,9 @@ class MaladType:
         plt.plot(YitalyMat.T, 'r-', label='Italy')
         plt.plot(YusMat.T, 'k-', label='USA')
         plt.plot(YgermanyMat.T, 'c-', label='German')
+        plt.plot(YchinesMat.T, 'g-', label='China')
+
+
         plt.legend()  # AP plot++++++OK ssi chn color etc st !=
         plt.show()
         ###

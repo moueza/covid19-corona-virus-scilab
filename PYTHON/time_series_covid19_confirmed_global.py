@@ -251,7 +251,7 @@ class MaladType:
         # plt.plot(YfranceMat.T,'b.',label='linear',YitalyMat.T,'ro',label='linear',self.YusMat.T,'b.',label='linear',YgermanyMat.T,'b.',label='linear')
         # linestyle='-' options https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot
         plt.plot(YfranceMat.T, 'b-', label='France',
-                 linewidth=2, markersize=12, )
+                 linewidth=2, markersize=12, )O
         plt.plot(YitalyMat.T, 'r-', label='Italy')
         plt.plot(self.YusMat.T, 'k-', label='USA')
         plt.plot(YgermanyMat.T, 'c-', label='German')

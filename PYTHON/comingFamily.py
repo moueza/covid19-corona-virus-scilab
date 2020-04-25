@@ -45,10 +45,13 @@ lm= ListeMoi()
 l2=lm.coming(str)
 print("str=",str)
 print("str coming=",l2)
-chines = lm.coming("""51    52 53
+
+
+
+chinesComing = lm.coming("""51    52 53
             5 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 """)  # triples guillemets
 
-print("chines=",chines)
+print("chines=",chinesComing)
      
 import numpy as np
 arr=np.array(l2)

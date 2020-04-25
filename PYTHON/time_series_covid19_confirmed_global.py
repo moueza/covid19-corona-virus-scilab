@@ -174,7 +174,7 @@ class MaladType:
         ###
         ###
         indexUsOri = 227
-        YusMat = subMatInt2[indexUsOri-2, :]
+        self.self.YusMat = subMatInt2[indexUsOri-2, :]
         YusLabel = arrayMoiMatrix[indexUsOri-2+1]
         ###
 
@@ -188,6 +188,7 @@ class MaladType:
         ###
         chines = lm.coming("""51    52 53
             5 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 """)  # triples guillemets
+        print("chines=",chines)
         indexxMatChines = np.matrix(chines)  # to enable -2 with matrix below
         YchinesMatsTripl = subMatInt2[indexxMatChines-2, :]  # !!!!!!!!vector triple
         YchinesMatsDouble = YchinesMatsTripl[0]
@@ -243,16 +244,16 @@ class MaladType:
         plt.ylabel('items')
         plt.title("Covid19 evolution of confirmed cases from 2020/1/22")
 
-        colonnIndxMax = YusMat.shape[1]-1
+        colonnIndxMax = self.YusMat.shape[1]-1
         plt.xlim(0, colonnIndxMax)
-        plt.ylim(0, YusMat[0, colonnIndxMax])
+        plt.ylim(0, self.YusMat[0, colonnIndxMax])#scale lim
 
-        # plt.plot(YfranceMat.T,'b.',label='linear',YitalyMat.T,'ro',label='linear',YusMat.T,'b.',label='linear',YgermanyMat.T,'b.',label='linear')
+        # plt.plot(YfranceMat.T,'b.',label='linear',YitalyMat.T,'ro',label='linear',self.YusMat.T,'b.',label='linear',YgermanyMat.T,'b.',label='linear')
         # linestyle='-' options https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot
         plt.plot(YfranceMat.T, 'b-', label='France',
                  linewidth=2, markersize=12, )
         plt.plot(YitalyMat.T, 'r-', label='Italy')
-        plt.plot(YusMat.T, 'k-', label='USA')
+        plt.plot(self.YusMat.T, 'k-', label='USA')
         plt.plot(YgermanyMat.T, 'c-', label='German')
         plt.plot(YchinesMat.T, 'g-', label='China')
 

@@ -48,7 +48,7 @@
 # *mag Linux France bleu no 40H [3]:
 #                                p13 append [112]
 #                                p16 fortran g95 heritage de classe
-#                                p17 map
+#                                p17 map decorators closures
 #                                p19 // parallelisme
 #                                p22 map
 #                                p31 p32 ITK VTK
@@ -174,7 +174,7 @@ class MaladType:
         ###
         ###
         indexUsOri = 227
-        self.self.YusMat = subMatInt2[indexUsOri-2, :]
+        self.YusMat = subMatInt2[indexUsOri-2, :]
         YusLabel = arrayMoiMatrix[indexUsOri-2+1]
         ###
 
@@ -251,7 +251,7 @@ class MaladType:
         # plt.plot(YfranceMat.T,'b.',label='linear',YitalyMat.T,'ro',label='linear',self.YusMat.T,'b.',label='linear',YgermanyMat.T,'b.',label='linear')
         # linestyle='-' options https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot
         plt.plot(YfranceMat.T, 'b-', label='France',
-                 linewidth=2, markersize=12, )O
+                 linewidth=2, markersize=12, )
         plt.plot(YitalyMat.T, 'r-', label='Italy')
         plt.plot(self.YusMat.T, 'k-', label='USA')
         plt.plot(YgermanyMat.T, 'c-', label='German')

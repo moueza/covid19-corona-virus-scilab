@@ -159,22 +159,22 @@ class MaladType:
         ###
         indexFranceOri = 118  # ori = from ancient from Scilab file
         # 118 -2 car -1 index 0 , et -1 car sub = trunc lignes et col
-        YfranceMat = subMatInt2[indexFranceOri-2, :]
+        YfranceMat = subMatInt2[indexFranceOri-2-1, :]
         # ci-dessus+1 car ce n est pas une sub dc pas de trunc title
         YfranceLabel = arrayMoiMatrix[indexFranceOri-2+1]
         ###
         indexGermanyOri = 122
-        YgermanyMat = subMatInt2[indexGermanyOri-2, :]
+        YgermanyMat = subMatInt2[indexGermanyOri-2-1, :]
         YgermanyLabel = arrayMoiMatrix[indexGermanyOri-2+1]
         ###
         ###
         indexItalyOri = 139
-        YitalyMat = subMatInt2[indexItalyOri-2, :]
+        self.YitalyMat = subMatInt2[indexItalyOri-2-1, :]
         YitalyLabel = arrayMoiMatrix[indexItalyOri-2+1]
         ###
         ###
         indexUsOri = 227
-        self.YusMat = subMatInt2[indexUsOri-2, :]
+        self.YusMat = subMatInt2[indexUsOri-2-1, :]
         YusLabel = arrayMoiMatrix[indexUsOri-2+1]
         ###
 
@@ -190,11 +190,11 @@ class MaladType:
             5 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 """)  # triples guillemets
         print("chines=",chines)
         indexxMatChines = np.matrix(chines)  # to enable -2 with matrix below
-        YchinesMatsTripl = subMatInt2[indexxMatChines-2, :]  # !!!!!!!!vector triple
+        YchinesMatsTripl = subMatInt2[indexxMatChines-2-1, :]  # !!!!!!!!vector triple
         YchinesMatsDouble = YchinesMatsTripl[0]
         # np.append(q.tolist(),x.tolist(),axis=0)
         # YindiaMat=subMatInt2[indexFranceOri-2,:]
-        YchinesMat = YchinesMatsDouble.sum(axis=0)
+        self.YchinesMat = YchinesMatsDouble.sum(axis=0)
         ###
         frances = lm.coming("""109 110 111 112 113 114 115 116 117 118 """)
         afriques = [195, 202, 212, 144, 158, 190, 201,
@@ -220,7 +220,7 @@ class MaladType:
         ###
         india = [133]
         indexxMat = np.matrix(india)  # to enable -2 with matrix below
-        YindiaMatsTripl = subMatInt2[indexxMat-2, :]  # !!!!!!!!vector triple
+        YindiaMatsTripl = subMatInt2[indexxMat-2-1, :]  # !!!!!!!!vector triple
         YindiaMatsDouble = YindiaMatsTripl[0]
         # np.append(q.tolist(),x.tolist(),axis=0)
         # YindiaMat=subMatInt2[indexFranceOri-2,:]
@@ -246,16 +246,17 @@ class MaladType:
 
         colonnIndxMax = self.YusMat.shape[1]-1
         plt.xlim(0, colonnIndxMax)
-        plt.ylim(0, self.YusMat[0, colonnIndxMax])#scale lim
+        #plt.ylim(0, self.YusMat[0, colonnIndxMax])#scale lim
+        plt.ylim(0, 1000000)
 
-        # plt.plot(YfranceMat.T,'b.',label='linear',YitalyMat.T,'ro',label='linear',self.YusMat.T,'b.',label='linear',YgermanyMat.T,'b.',label='linear')
+        # plt.plot(YfranceMat.T,'b.',label='linear',self.YitalyMat.T,'ro',label='linear',self.YusMat.T,'b.',label='linear',YgermanyMat.T,'b.',label='linear')
         # linestyle='-' options https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot
         plt.plot(YfranceMat.T, 'b-', label='France',
                  linewidth=2, markersize=12, )
-        plt.plot(YitalyMat.T, 'r-', label='Italy')
+        plt.plot(self.YitalyMat.T, 'r-', label='Italy')
         plt.plot(self.YusMat.T, 'k-', label='USA')
         plt.plot(YgermanyMat.T, 'c-', label='German')
-        plt.plot(YchinesMat.T, 'g-', label='China')
+        plt.plot(self.YchinesMat.T, 'g-', label='China')
 
 
         plt.legend()  # AP plot++++++OK ssi chn color etc st !=

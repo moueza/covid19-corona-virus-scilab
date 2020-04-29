@@ -264,13 +264,13 @@ class MaladType:
         plt.legend()  # AP plot++++++OK ssi chn color etc st !=
         #plt.show()
 
-        strAllMerged=self.nature+'.pdf'
+        #strAllMerged=self.nature+'.pdf'
         #https://matplotlib.org/3.1.1/gallery/text_labels_and_annotations/usetex_fonteffects.html#sphx-glr-gallery-text-labels-and-annotations-usetex-fonteffects-py
-        plt.savefig(self.nature+'.pdf')
-        print('strAllMerged=',strAllMerged)
-        #plt.savefig('usetex_fonteffects.png')
-        #plt.savefig('usetex_fonteffects.svg')
-        #plt.savefig('usetex_fonteffects.jpg')
+        #plt.savefig(self.nature+'.pdf')
+        #print('strAllMerged=',strAllMerged)
+        plt.savefig(self.nature+'.png')
+        plt.savefig(self.nature+'.svg')
+        plt.savefig(self.nature+'.jpg')
         ###
         # fig = plt.figure()  # an empty figure with no axes
         # fig.suptitle('No axes on this figure')  # Add a title so we know which it is
@@ -298,4 +298,10 @@ class MaladType:
 
 
 natureAnalyzed = MaladType("time_series_covid19_confirmed_global")
+natureAnalyzed.main()
+
+natureAnalyzed = MaladType("time_series_covid19_deaths_global")
+natureAnalyzed.main()
+
+natureAnalyzed = MaladType("time_series_covid19_recovered_global")
 natureAnalyzed.main()

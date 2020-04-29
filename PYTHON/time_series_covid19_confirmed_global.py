@@ -66,8 +66,9 @@ from comingFamily import *
 
 
 class MaladType:
-    def __init__(self, natureOfMaladd):
-        self.nature = natureOfMaladd
+    def __init__(self, natureOfMaladdPrefix):
+        #radical of prefix suffix
+        self.nature = natureOfMaladdPrefix
     # model poub
 
     def printModel(self):
@@ -81,7 +82,8 @@ class MaladType:
         # https://realpython.com/python-csv/#reading-csv-files-with-csv
 
         # with open('../time_series_covid19_deaths_global.csv') as csv_fileDeath:
-        with open('../time_series_covid19_confirmed_global.csv') as csv_fileConfirmed:
+        #with open('../time_series_covid19_confirmed_global.csv') as csv_fileConfirmed:
+        with open('../'+self.nature+'.csv') as csv_fileConfirmed:
             csv_reader = csv.reader(csv_fileConfirmed, delimiter=',')
             line_count = 0
             # print(f'longh = {line_count.length}')
@@ -260,7 +262,15 @@ class MaladType:
 
 
         plt.legend()  # AP plot++++++OK ssi chn color etc st !=
-        plt.show()
+        #plt.show()
+
+        strAllMerged=self.nature+'.pdf'
+        #https://matplotlib.org/3.1.1/gallery/text_labels_and_annotations/usetex_fonteffects.html#sphx-glr-gallery-text-labels-and-annotations-usetex-fonteffects-py
+        plt.savefig(self.nature+'.pdf')
+        print('strAllMerged=',strAllMerged)
+        #plt.savefig('usetex_fonteffects.png')
+        #plt.savefig('usetex_fonteffects.svg')
+        #plt.savefig('usetex_fonteffects.jpg')
         ###
         # fig = plt.figure()  # an empty figure with no axes
         # fig.suptitle('No axes on this figure')  # Add a title so we know which it is
@@ -287,5 +297,5 @@ class MaladType:
         # TODO a;b;c;d;e; = print(a);print(2)
 
 
-natureAnalyzed = MaladType("../time_series_covid19_confirmed_global.csv")
+natureAnalyzed = MaladType("time_series_covid19_confirmed_global")
 natureAnalyzed.main()

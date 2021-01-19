@@ -10,3 +10,21 @@ font-size: 12px;
   width: 100%;
   height: auto;
 }
+
+
+
+
+
+
+//https://www.w3schools.com/css/css_rwd_images.asp
+/* For devices smaller than 400px: */
+body {
+ // background-image: url('img_smallflower.jpg');
+}
+
+/* For devices 400px and larger: */
+@media only screen and (min-device-width: 400px) {
+//  body {
+  //  background-image: url('img_flowers.jpg');
+  //}
+//}

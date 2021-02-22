@@ -11,19 +11,63 @@
 	WARRANTIES OR CONDITIONS OF ANY ~ KIND, either express or implied. See the 
 	License for the ~ specific language governing permissions and limitations 
 	~ under the License. -->
- 
+
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
           http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
 	<servlet>
-		<servlet-name>AxisServlet</servlet-name>
-		<servlet-class>org.apache.axis2.transport.http.AxisServlet</servlet-class>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<!-- Map these files with JSF -->
 	<servlet-mapping>
-		<servlet-name>AxisServlet</servlet-name>
-		<url-pattern>/services/*</url-pattern>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.faces</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<!-- <param-value>/WEB-INF/applicationContextMoi.xml</param-value> -->
+		<param-value>/WEB-INF/applicationContextMoi.xml</param-value>
+	</context-param>
+
+	<!-- import from imieCalculatrice JSF -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>resources.application</param-value>
+	</context-param>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<listener>
+		<!--<listener-class>com.sun.faces.config.ConfigureListener</listener-class> -->
+		<!-- <listener-class>com.sun.faces.config.ConfigureListener</listener-class> -->
+
+
+		<!-- https://stackoverflow.com/questions/27015057/no-webapplicationcontext-found-no-contextloaderlistener-registered -->
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+
+	</listener>
+
+	<!-- https://openclassrooms.com/fr/courses/626954-creez-votre-application-web-avec-java-ee/624784-le-modele-dao -->
+	<!-- <listener> -->
+	<!-- <listener-class>com.sdzee.config.InitialisationDaoFactory</listener-class> -->
+	<!-- </listener> -->
+
 </web-app>

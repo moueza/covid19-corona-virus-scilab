@@ -472,7 +472,7 @@
 		</repository>
 	</repositories>
 	<build>
-		<finalName>maison-de-la-mer</finalName>
+		<finalName>covid19-corona-virus</finalName>
 
 
 		<!-- https://maven.apache.org/plugins/maven-resources-plugin/examples/encoding.html -->

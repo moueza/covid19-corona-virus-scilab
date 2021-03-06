@@ -1,0 +1,6 @@
+entities/Bar.class
+conf/DataSourceConfiguration.class
+homniserv/covid19_corona_virus_scilab/SimpleService.class
+conf/TransferServiceImpl.class
+entities/Foo.class
+conf/TransferServicee.class

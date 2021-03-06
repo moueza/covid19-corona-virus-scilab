@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration;
 
 import entities.Bar;
 import entities.Foo;
-
+import services.TransferServiceImpl;
+import services.BookingService;
+import services.TransferServiceI;
 import conf.*;
 
 /**
@@ -20,9 +22,13 @@ public class DataSourceConfiguration {
 	/**
 	 * PDF
 	 * https://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/pdf/spring-javaconfig-reference.pdf
+	 * 
+	 * 4.2.4
+	 * https://docs.spring.io/spring-javaconfig/docs/1.0.0.m3/reference/html/creating-bean-definitions.html
+	 * Singleton scope as default
 	 */
 	@Bean
-	public TransferServicee transferServicee() {
+	public TransferServiceI transferService() {
 		return new TransferServiceImpl();
 	}
 
@@ -38,5 +44,13 @@ public class DataSourceConfiguration {
 	@Bean
 	public Bar bar() {
 		return new Bar();
+	}
+
+	/**
+	 * https://stackoverflow.com/questions/34172888/difference-between-bean-and-autowired
+	 */
+	@Bean
+	BookingService bookingService() {
+		return new BookingService();
 	}
 }
